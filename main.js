@@ -96,7 +96,6 @@ form.addEventListener('submit', function(e){
 		xhr.onload = function(){
 			if(this.status == 200){
 				var update = JSON.parse(this.responseText);
-				console.log(update);
 				updateEntry(update);
 			}else{
 				window.alert('Invalid IP/Domain address')
