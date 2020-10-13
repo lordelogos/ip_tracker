@@ -54,18 +54,18 @@ label{
 
 .detail{
 	width: 25%;
-	height: 12vh;
+	min-height: 12vh;
 	padding: 10px 0 0 10px;
 }
 
 .detail-heading{
-	font-size: .8vw;
+	font-size: .7vw;
 	text-transform: uppercase;
 	margin-bottom: 5px;
 }
 
 .detail-value{
-	font-size: 1.6vw;
+	font-size: 1.4vw;
 	font-weight: 600;
 }
 
@@ -156,4 +156,17 @@ footer a{
 
 footer a:hover{
 	color: #1a1aff;
+}
+
+@media screen and (max-width: 1024px){
+	.detail-heading{
+	font-size: .8vw;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.detail-value{
+	font-size: 1.6vw;
+	font-weight: 600;
+}
 }
