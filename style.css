@@ -54,18 +54,18 @@ label{
 
 .detail{
 	width: 25%;
-	min-height: 12vh;
+	height: 12vh;
 	padding: 10px 0 0 10px;
 }
 
 .detail-heading{
-	font-size: .7vw;
+	font-size: .8vw;
 	text-transform: uppercase;
 	margin-bottom: 5px;
 }
 
 .detail-value{
-	font-size: 1.4vw;
+	font-size: 1.6vw;
 	font-weight: 600;
 }
 
@@ -95,40 +95,6 @@ label{
 	background-color: #b3b3ff;
 }
 
-@media screen and (max-width: 768px){
-	#details{
-		flex-direction: column;
-	}
-
-	#map{
-		margin-top: -25vh;
-		height: 60vh;
-	}
-
-	.detail{
-		width: auto;
-	}
-
-	#ip{
-		width: 70vw;
-	}
-
-	.detail-heading{
-	font-size: 2vw;
-	text-transform: uppercase;
-	margin-bottom: 5px;
-	}
-
-	.detail-value{
-		font-size: 3vw;
-		font-weight: 600;
-	}
-
-	section{
-		width: 100%;
-		margin: 0;
-	}
-}
 
 #error{
 	color: red;
@@ -158,15 +124,40 @@ footer a:hover{
 	color: #1a1aff;
 }
 
-@media screen and (max-width: 1024px){
-	.detail-heading{
-	font-size: .8vw;
-	text-transform: uppercase;
-	margin-bottom: 5px;
-}
+@media screen and (max-width: 768px){
+	section{
+		width: 100%;
+		margin: 0;
+	}
+	#ip{
+		width: 70vw;
+	}
 
-.detail-value{
-	font-size: 1.6vw;
-	font-weight: 600;
-}
+	#details{
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+	}
+
+	.detail{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.detail-heading{
+		font-size: 14px;
+	}
+
+	.detail-value{
+		font-size: 18px;
+	}
+
+	#map{
+		margin-top: -20vh;
+	}
 }
