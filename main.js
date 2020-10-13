@@ -1,7 +1,7 @@
 var mymap;
 var a;
 var b;
-var clientIp;
+var clientIp = localStorage.getItem('ip');
 
 //getting the client IP address
 function getJSONP(url, success) {
@@ -20,12 +20,24 @@ function getJSONP(url, success) {
     head.appendChild(script);
 
 }
-
+/*
 getJSONP('https://api.ipify.org?format=jsonp&callback=?', function(data){
     clientIp = data['ip'];
-}); 
+    localStorage.setItem('ip', clientIp);
+}); */
+
+if (clientIp == null || clientIp == ''){
+	getJSONP('https://api.ipify.org?format=jsonp&callback=?', function(data){
+    var clientIp = data['ip'];
+    console.log(2)
+    localStorage.setItem('ip', clientIp);
+	});
+}
+
+
 
 //getting client location
+const api_key = 'at_qM5mgWRLjhTNuDDiKGcOf421T5VkK';
 if (window.navigator.geolocation) {
 	window.navigator.geolocation.getCurrentPosition(function(position){
 		var a = position['coords']['latitude'];
@@ -33,9 +45,8 @@ if (window.navigator.geolocation) {
 		mymap.setView([a,b]);
 		var marker = L.marker([a,b]).addTo(mymap);
 		marker.bindPopup(`Your location`).openPopup();
-		var search = clientIp;
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', `https://geo.ipify.org/api/v1?apiKey=${api_key}&ipAddress=${search}`, true);
+		xhr.open('GET', `https://geo.ipify.org/api/v1?apiKey=${api_key}&ipAddress=${clientIp}`, true);
 
 		xhr.onload = function(){
 			if(this.status == 200){
@@ -65,7 +76,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoicGF1bG9lLW1lIiwiYSI6ImNrZzd6bzZldjBjZGUyeXFubmtvN3NycDkifQ.-P495y88So4PLt3wz4QPNQ'
 }).addTo(mymap);
-const api_key = 'at_qM5mgWRLjhTNuDDiKGcOf421T5VkK';
+
 
 
 
