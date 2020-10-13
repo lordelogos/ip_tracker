@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IP tracker | project by Paul Ehikhuemen</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./leaflet/leaflet.css" />
+	<script src="./leaflet/leaflet.js"></script>
+</head>
+<body>
+	<section>
+		<label>IP Address Tracker</label>
+		<div id="error"></div>
+		<form id="form">
+			<input type="text" name="ip_domain_email" id="ip" placeholder="Search for any IP address or domain">
+			<input type="submit" name="submit" value="Search" id="btn">
+		</form>
+		<div id="details">
+			<div class="detail">
+				<p class="detail-heading">Ip address</p>
+				<p class="detail-value" id="ip_address">192.212.174.101</p>
+			</div>
+			<div class="detail">
+				<p class="detail-heading">location</p>
+				<p class="detail-value" id="location">Brooklyn, NY 10001</p>
+			</div>
+			<div class="detail">
+				<p class="detail-heading">timezone</p>
+				<p class="detail-value" id="timezone">UTC -05:00</p>
+			</div>
+			<div class="detail">
+				<p class="detail-heading">Isp</p>
+				<p class="detail-value" id="isp">SpaceX Starlink</p>
+			</div>
+		</div>
+		<div id="map"></div>
+	</section>
+
+	<footer>
+		<ul>
+			<a href="https://github.com/lordelogos"><li>The Creator</li></a>
+			<a href="#"><li>Github Repo</li></a>
+		</ul>
+	</footer>
+
+	<script type="text/Javascript" src="main.js"></script>
+</body>
+</html>
